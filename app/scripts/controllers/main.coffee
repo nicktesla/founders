@@ -10,7 +10,7 @@ angular.module('foundersApp')
 
     computePercents = ->
       workers = _.filter($scope.founders, (founder) -> founder and founder.workExperience.length and founder.foundedStartups.length == 1)
-      workerSerial = _.filter($scope.founders, (founder) -> founder and founder.workExperience.length and founder.foundedStartups.length >=1)
+      workerSerial = _.filter($scope.founders, (founder) -> founder and founder.workExperience.length and founder.foundedStartups.length >1)
       pureSerial = _.filter($scope.founders, (founder) -> founder and !founder.workExperience.length)
 
       if $scope.founders.length

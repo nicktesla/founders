@@ -10,7 +10,7 @@ div(ng-include='\'partials/navbar\'')
 .row.marketing
   div(ng-repeat='founder in founders')
     h4 {{founder.name}}
-    h4(ng-show='founder.foundedStartups.length') Startups Founded
+    //-h4(ng-show='founder.foundedStartups.length') Startups Founded
     div(ng-repeat='startup in founder.foundedStartups')
       p {{startup}}
     h4(ng-show='founder.workExperience.length') Work Experience

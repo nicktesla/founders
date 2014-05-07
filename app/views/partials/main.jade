@@ -9,7 +9,7 @@ div(ng-include='\'partials/navbar\'')
 .row.marketing
   .stats
     .stat
-      | Pure Serial | Worked then Serial | Worked then One Startup : {{stats.pureSerialPercent | number:2}}% | {{stats.workerSerialPercent | number:2}}% | {{stat.workerPercent| number:2}}%
+      | Pure Serial | Worked then Serial | Worked then One Startup : {{stats.pureSerialPercent | number:2}}% | {{stats.workerSerialPercent | number:2}}% | {{stats.workerPercent| number:2}}%
   div(ng-repeat='founder in founders')
     h4 {{founder.name}}
     //-h4(ng-show='founder.foundedStartups.length') Startups Founded

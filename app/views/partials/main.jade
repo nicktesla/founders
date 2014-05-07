@@ -4,10 +4,12 @@ div(ng-include='\'partials/navbar\'')
   h1
     | Startup Founders
 
-  p.lead
+  //-p.lead
     | Work Experience of Startup Founders
-    
 .row.marketing
+  .stats
+    .stat
+      | Pure Serial | Worked then Serial | Worked then One Startup : {{stats.pureSerialPercent | number:0}}% | {{stats.workerSerialPercent | number:0}}% | {{stat.workerPercent| number:0}}%
   div(ng-repeat='founder in founders')
     h4 {{founder.name}}
     //-h4(ng-show='founder.foundedStartups.length') Startups Founded

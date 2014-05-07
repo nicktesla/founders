@@ -1,0 +1,39 @@
+div(ng-include='\'partials/navbar\'')
+.add-founder
+  form(role="form", ng-submit="createFounder()")
+    .form-group
+      label(for='founderName') Founder Name
+      input#founderName.form-control(placeholder = 'enter a founders name', ng-model='createForm.founderName')
+    .form-group
+      label(for='companyName') Startup Founded
+      input#companyName.form-control(placeholder = 'enter a startup name', ng-model='createForm.startupName')
+    button.btn.btn-default(type='submit') Submit       
+.row.marketing
+  div(ng-repeat="founder in founders | orderBy: 'createdAt': true")
+    h4 
+      a(href="", ng-click="editFounders = !editFounders") {{founder.name}}
+    h4(ng-show='founder.foundedStartups.length') Startups Founded
+    form(role="form", ng-submit="updateFoundedStartups(founder._id)", ng-show='editFounders')
+      .form-group
+        label(for='newCompanyFounded') Add another startup
+        input#newCompanyFounded.form-control(placeholder= 'enter a startup name', ng-model='updateForm.startupName')
+      button.btn.btn-default(type='submit') Submit
+    div(ng-repeat='startup in founder.foundedStartups')
+      p {{startup}}
+    h4(ng-show='founder.workExperience.length') Work Experience
+    form(role="form", ng-submit="updateWorkExperience(founder._id)", ng-show='editFounders')
+      .form-group
+        label(for='newCompanyExperience') Add work experience
+        input#newCompanyExperience.form-control(placeholder= 'enter a company name', ng-model='updateForm.companyName')
+      .form-group
+        label(for='newStartYear') Add a start year
+        input#newStartYear.form-control(placeholder= 'enter a start year', ng-model='updateForm.startYear')
+      .form-group
+        label(for='newEndYear') Add an end year
+        input#newEndYear.form-control(placeholder= 'enter an end year', ng-model='updateForm.endYear')
+      button.btn.btn-default(type='submit') Submit       
+    div(ng-repeat='experience in founder.workExperience')
+      p {{experience.companyName}} - {{experience.startYear}} to {{experience.endYear}}    
+
+.footer
+  p ♥ from San Francisco

@@ -2,5 +2,8 @@
 
 angular.module('foundersApp')
   .controller 'MainCtrl', ($scope, $http) ->
-    $http.get('/api/awesomeThings').success (awesomeThings) ->
-      $scope.awesomeThings = awesomeThings
+    $http.get('/api/founders').success (result) ->
+      if result.success
+        $scope.founders = founders
+      else if result.error
+        $log.debug "error grabbing the founders: #{result.error}"

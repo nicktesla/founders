@@ -2,21 +2,20 @@ div(ng-include='\'partials/navbar\'')
 
 .jumbotron
   h1
-    | 'Allo, 'Allo 
-    span(ng-show='currentUser') {{ currentUser.name }}
-    | !
+    | Startup Founders
 
   p.lead
-    <img src="images/yeoman.png" alt="I'm Yeoman">
-    br
-    | Always a pleasure scaffolding your apps.
-  p
-    a.btn.btn-lg.btn-success(ng-href='#') Splendid!
+    | Work Experience of Startup Founders
     
 .row.marketing
-  div(ng-repeat='thing in awesomeThings')
-    h4 {{thing.name}}
-    p {{thing.info}}
+  div(ng-repeat='founder in founders')
+    h4 {{founder.name}}
+    h4(ng-show='founder.foundedStartups.length') Startups Founded
+    div(ng-repeat='startup in founder.foundedStartups')
+      p {{startup}}
+    h4(ng-show='founder.workExperience.length') Work Experience
+    div(ng-repeat='experience in founder.workExperience')
+      p {{experience.companyName}} - {{experience.startYear}} to {{experience.endYear}}
 
 .footer
-  p ♥ from the Yeoman team
+  p ♥ from San Francisco

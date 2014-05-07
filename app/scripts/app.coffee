@@ -12,16 +12,9 @@ angular.module('foundersApp', [
         templateUrl: 'partials/main'
         controller: 'MainCtrl'
       
-      .when '/login',
-        templateUrl: 'partials/login'
-        controller: 'LoginCtrl'
-      .when '/signup', 
-        templateUrl: 'partials/signup'
-        controller: 'SignupCtrl'
-      .when '/settings',
-        templateUrl: 'partials/settings'
-        controller: 'SettingsCtrl'
-        authenticate: true
+      .when '/admin',
+        templateUrl: 'partials/admin'
+        controller: 'AdminCtrl'
       .otherwise
         redirectTo: '/'
 
@@ -36,8 +29,4 @@ angular.module('foundersApp', [
         else
           $q.reject response
     ]
-  .run ($rootScope, $location, Auth) ->
-    
-    # Redirect to login if route requires auth and you're not logged in
-    $rootScope.$on '$routeChangeStart', (event, next) ->
-      $location.path '/login'  if next.authenticate and not Auth.isLoggedIn()
+  .run ($rootScope, $location) ->

@@ -1,18 +1,11 @@
 'use strict'
 
 angular.module('foundersApp')
-  .controller 'NavbarCtrl', ($scope, $location, Auth) ->
+  .controller 'NavbarCtrl', ($scope, $location) ->
     $scope.menu = [
       title: 'Home'
       link: '/'
-    , 
-      title: 'Settings'
-      link: '/settings'
     ]
-    
-    $scope.logout = ->
-      Auth.logout().then ->
-        $location.path "/login"
     
     $scope.isActive = (route) ->
       route is $location.path()

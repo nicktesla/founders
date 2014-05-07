@@ -8,6 +8,8 @@ div(ng-include='\'partials/navbar\'')
     | Work Experience of Startup Founders
 .row.marketing
   .stats
+    .stats-header
+      h3 Stats to display
     .stat
       | Pure Serial | Worked then Serial | Worked then One Startup : {{stats.pureSerialPercent | number:2}}% | {{stats.workerSerialPercent | number:2}}% | {{stats.workerPercent| number:2}}%
     .stat

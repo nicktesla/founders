@@ -10,7 +10,25 @@ div(ng-include='\'partials/navbar\'')
   .stats
     .stat
       | Pure Serial | Worked then Serial | Worked then One Startup : {{stats.pureSerialPercent | number:2}}% | {{stats.workerSerialPercent | number:2}}% | {{stats.workerPercent| number:2}}%
-  div(ng-repeat='founder in founders')
+    .stat
+      | filter by valuation/ founder worth/ employee count, sector (Consumer/enterprise/ marketX) etc
+    .stat
+      | average number of companies founded per entrepreneur
+    .stat
+      | founders ordered by largest company net worth / number of companies founded
+    .stat
+      | how many companies do they work for / how many before they found theirs/ how many after
+    .stat
+      | how does work experience affect choice of what to work on? / success | compare contrast this to majoring in directly related field
+    .stat
+      | how many founders per company
+    .stat
+      | do founders work together/ go to same school/ same age? / what is property shared by founders [clustering]
+    .stat
+      | does work experience depend on sector e.g. consumer vs enterprise?     
+  h3 
+    a(href="", ng-click='foundersVisible = !foundersVisible') Show Founders
+  div(ng-repeat='founder in founders', ng-show='foundersVisible')
     h4 {{founder.name}}
     //-h4(ng-show='founder.foundedStartups.length') Startups Founded
     div(ng-repeat='startup in founder.foundedStartups')

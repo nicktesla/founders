@@ -5,16 +5,18 @@ founders
 Do serial entrepreneurs make for better founders than early startup employees?
 
 ##TODO 
-* code for splitting between serial entrepreneurs and early employees
-* code for analyzing main statistics for work experience in both groups
-* code for doing clustering to infer most influential startup mafias
+* determine and respect criteria for founder selection
 * decide what and how best to visualize
 * code for visualizing results
 * include error bars and note on statistical significance
+* code for analyzing main statistics for work experience in both groups
+* code for doing clustering to infer most influential startup mafias
 
-##DONE
+##FIRST PASS
 * Founder schema
 * Admin panel for adding founders and associating with companies
+* code for splitting between serial entrepreneurs and early employees
+
 
 ###Methodology
 In order to answer the question, we generalize a bit and try to study the work experience of notable founders.

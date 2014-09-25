@@ -2,3 +2,19 @@ a true bad ass--> https://www.linkedin.com/in/richbarton
 add networth to founder collection
 add valuation/ employee size to companies
 track number of months of experience not just years
+
+-------------------------------------------------------
+
+show faces  with the vertical line separators being serial vs semi serial vs workers
+then allow for secondary filtering by e.g. by valuation/ founder worth/ employee count, sector (Consumer/enterprise/ marketX) etc
+
+focus just on founders
+show average number of companies founded
+female vs male
+order founders by largest company net worth / number of companies founded
+how many companies do they work for / how many before they found theirs/ how many after
+how does work experience affect choice of what to work on? / success | compare contrast this to majoring in directly related field
+how many founders per company
+do founders work together/ go to same school/ same age? / what is property shared by founders [clustering]
+
+does work experience depend on sector e.g. consumer
